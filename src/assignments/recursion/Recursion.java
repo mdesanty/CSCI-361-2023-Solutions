@@ -23,8 +23,8 @@ public class Recursion {
     }
 
     public static int countSubstring(String value, String subValue) {
-        if (value.contains(subValue))
-            return 1 + countSubstring(value.replaceFirst(subValue, ""), subValue);
+        if (value.toLowerCase().contains(subValue.toLowerCase()))
+            return 1 + countSubstring(value.replaceFirst("(?i)" + subValue, ""), subValue);
 
         return 0;
     }
